@@ -1,0 +1,747 @@
+@import config
+@import '../../node_modules/slick-carousel/slick/slick.css'
+
+
+// CUSTOM USER STYLES & IMPORTS
+
+// general
+.white-section
+	padding-top: 90px
+	padding-bottom: 115px
+
+.dark-section
+	background: $textcolor
+	color: #eee
+
+.large-text
+	font-size: 20px
+	text-align: center
+
+.gray-section
+	background: $gray
+
+.text
+	line-height: 33px
+	text-align: center
+	margin: 0 auto
+
+.section-title
+	margin-bottom: 45px
+	text-align: center
+	font-size: 27px
+	font-weight: 700
+
+// banner section
+
+.banner-section
+	height: 1000px
+	background:  url("../images/general/banner-bg.jpg") 0 0 no-repeat
+	background-size: cover
+	background-attachment: fixed
+	.container
+		display: flex
+		flex-direction: column
+
+.main-header
+	display: flex
+	justify-content: space-between
+	padding-top: 45px
+	text-transform: uppercase
+	margin-bottom: 330px
+	
+
+
+.logo
+	font-size: 18px
+	font-weight: 700
+	display: block	
+	color: #000
+	text-transform: uppercase	
+	&:hover
+		text-decoration: none
+		color: #000
+
+.main-nav
+	display: flex
+	align-items: center
+	&.active
+		.toggle-line--center
+			display: none
+		.toggle-line--top
+			transform: translateY(4px) rotate(45deg)
+
+		.toggle-line--bottom
+			transform: rotate(-45deg) translateY(-1px)
+
+.main-nav__toggle
+	display: none
+
+.main-nav__list
+	display: inline-flex
+	list-style: none
+	font-size: 16px
+	font-weight: 700
+	margin-bottom: 0
+
+.main-nav__item
+	margin-right: 20px
+
+.main-nav__link
+	color: #000
+	padding-bottom: 5px
+	position: relative
+	transition: .3s ease all
+	&:after 
+		background: #000
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 3px
+	&:hover
+		text-decoration: none
+		color: #000
+		&:after
+			content: ''
+
+.main-nav__toggle
+	cursor: pointer
+
+.toggle-line
+	display: block
+	margin-bottom: 2px
+	width: 15px
+	height: 3px
+	background: #000
+	&:last-child
+		margin-bottom: 0
+
+.banner-content
+	max-width: 570px
+	text-align: right
+	font-size: 18px
+	margin-left: auto
+
+.banner-title
+	font-size: 74px
+	font-weight: 700
+	line-height: 1
+	text-transform: uppercase
+	position: relative
+	padding-bottom: 30px
+	margin-bottom: 40px
+	&:after 
+		position: absolute
+		content: ''
+		width: 140px
+		height: 5px
+		display: block
+		background: $textcolor
+		bottom: 0
+		right: 0
+
+.banner-descr
+	margin-bottom: 60px
+
+.btn
+	display: inline-block
+	width: 270px
+	font-weight: 700
+	height: 45px
+	line-height: 40px
+	border: 2px solid $textcolor
+	color: $textcolor
+	text-align: center
+	transition: .3s all ease
+	&:hover
+		text-decoration: none
+		background: $textcolor
+		color: white
+
+// who section
+
+.who-section
+	text-align: center
+	.container
+		max-width: 970px
+
+	.section-title
+		margin-bottom: 70px
+
+.who-img
+	margin-bottom: 15px
+
+// features section
+
+.features-section
+	padding: 80px 0 
+	.container
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+
+.feature-item
+	max-width: 280px
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	align-items: center
+	margin-bottom: 20px
+
+.feature-item__img
+	margin-bottom: 30px
+
+.feature-title
+	margin-bottom: 30px
+
+.feature-text
+	line-height: 26px
+
+// featured-section
+.featured-section
+	padding: 100px 0 130px
+	.section-title
+		text-align: center
+	.text
+		max-width: 770px
+		margin: 0 auto 95px
+
+.featured-slider
+	position: relative
+
+.featured-nav
+	position: absolute
+	top: 180px
+	cursor: pointer
+	&:hover
+		opacity: .6
+
+.featured-nav__left
+	left: -30px
+
+.featured-nav__right
+	right: -30px
+
+.slick-disabled
+	opacity: 0
+
+.featured-slider__item
+	position: relative
+	// max-width: 370px
+	padding: 60px 30px 50px
+	background: #222
+	margin: 0 10px	
+	color: #eee
+	&:before
+		content: ''
+		position: absolute
+		display: block
+		height: 5px
+		background: $accent
+		transition: .5s ease
+		width: 0
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+
+.featured-slider__item
+	&:hover
+		&:before 
+			width: 75px
+			transition: .5s ease
+
+
+.featured-slider__category
+	font-size: 14px
+	text-transform: uppercase
+	margin-bottom: 30px
+	display: inline-block
+
+.featured-slider__text
+	font-size: 24px
+	line-height: 33px
+	margin-bottom: 80px
+	height: 70px
+
+.featured-slider__author
+	display: flex
+	align-items: center
+	span 
+		display: block
+
+.featured__author--pic
+	margin-right: 15px
+
+.featured-slider__author--name
+	text-transform: uppercase
+	font-weight: 600
+
+// clients-section
+
+.clients-section
+	padding: 65px 0 90px
+	.container
+		max-width: 920px
+
+.clients-slider
+	position: relative
+
+.clients-slider__img
+	margin: 0 auto
+
+.clients-nav
+	position: absolute
+	top: 40px
+	cursor: pointer
+	&:hover
+		opacity: .6
+
+.clients-nav__left
+	left: -60px
+
+.clients-nav__right
+	right: -60px
+
+// portfolio
+
+
+.portfolio-section
+	padding: 95px 0 70px
+	.text
+		max-width: 770px
+		text-align: center
+		margin-bottom: 50px
+
+.portfolio-tabs
+	padding-top: 55px
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		display: block
+		left: 50%
+		top: 0
+		transform: translateX(-50%)
+		width: 77px
+		height: 7px
+		background: $accent
+
+.portfolio-tabs__header
+	max-width: 380px
+	margin: 0 auto
+	display: flex
+	justify-content: space-between
+	margin-bottom: 40px
+
+.portfolio-tabs__title
+	cursor: pointer
+
+.prep-portfolio-slider
+	display: none
+	
+
+.js-portfolio-slider
+	margin-bottom: 60px	
+
+.portfolio-dots
+	.slick-dots
+		display: flex
+		justify-content: center
+		list-style-type: none
+	li
+		margin: 0 5px
+		cursor: pointer
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		background: #cccccc
+		&.slick-active
+			background: $accent
+
+// quotes-section
+
+.quotes-section
+	padding: 75px 0 65px
+	.large-text
+		padding-top: 45px
+		max-width: 850px
+		position: relative
+		margin: 0 auto 40px
+		&:before 
+			content: ''
+			position: absolute
+			left: 50%
+			top: 0
+			transform: translateX(-50%)
+			display: block
+			width: 20px
+			height: 20px
+			background:  url('../images/content/quote.png') 0 0 no-repeat
+
+.quotes-author
+	font-size: 20px
+	font-style: italic
+	display: block
+	text-align: center
+
+// team memebers
+
+.team-section
+	padding: 100px 0 110px
+	.text
+		max-width: 770px
+		margin-bottom: 90px
+
+.team-members
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+
+.team-member
+	text-align: center
+	margin: 0 15px 30px
+	*
+		display: block
+	img 
+		margin-bottom: 40px
+		height: 110px
+
+.team-member__name
+	font-weight: 700
+	text-transform: uppercase
+	margin-bottom: 15px		
+
+// facts
+
+.facts-section
+	padding: 90px 0 120px
+	position: relative
+	background-position: right center!important
+	background-size: cover!important
+	color: #eee
+	&:before
+		content: ''
+		position: absolute
+		// z-index: 0
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background: #212121
+		opacity: .74
+
+	.section-title
+		margin-bottom: 65px
+	.container	
+		position: relative
+		z-index: 2
+
+.facts-banner
+	padding: 60px 
+	position: relative
+	background: rgba(#fff,0.34)
+	max-width: 830px
+	margin: 0 auto
+	text-align: center
+	&:after 
+		content: ''
+		position: absolute
+		top: 100%
+		left: 50%
+		transform: translateX(-50%)
+		display: block
+		height: 7px
+		width: 75px
+		background: $accent
+
+	span 
+		display: block
+
+.fact-banner__line
+	display: flex
+	justify-content: space-around
+	flex-wrap: wrap
+	&:first-child
+		margin-bottom: 15px
+
+.fact
+	margin-bottom: 30px
+
+.fact-number
+	font-size: 27px
+	position: relative
+	margin-bottom: 20px
+	padding-bottom: 20px
+	&:after 
+		content: ''
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		bottom: 0
+		width: 75px
+		height: 5px
+		background: #4d4c4b
+.fact-name
+	font-size: 24px
+
+.articles
+	padding: 110px 0 100px
+
+.article
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	margin-bottom: 40px
+	&.article-reversed
+		flex-direction: row-reverse
+		.article-img
+			margin-left: 0
+			margin-right: 15px
+
+.article-content
+	margin: 0 auto
+	max-width: 430px
+	text-align: center
+	color: #333
+	span 
+		display: block
+
+.category-date
+	margin-bottom: 10px
+	font-size: 14px
+	color: #555555
+
+.article-name
+	margin-bottom: 50px
+	font-size: 24px
+	font-weight: 600
+
+.article-text
+	line-height: 28px
+
+.article-img
+	margin-left: 15px
+
+// books section
+
+.books-section
+	padding: 85px 0
+	span 
+		display: block
+
+.books-slider
+	position: relative
+
+.book-slider__item
+	padding: 20px
+	padding-left: 25px
+	position: relative
+	&:before 
+		content: ''
+		position: absolute
+		display: block
+		left: 0
+		top: 15px
+		background: $textcolor
+		width: 6px
+		height: 75px
+	.category-date
+		margin-bottom: 0
+
+.books-nav
+	position: absolute
+	top: 45px
+	cursor: pointer
+
+.books-nav__left
+	left: -30px
+
+.books-nav__right
+	right: -10px
+
+.book-name
+	font-size: 18px
+	font-weight: 600
+	margin-bottom: 10px
+
+// testimony section
+
+.testimony-section
+	padding: 70px 0 90px
+	text-align: center
+	.large-text
+		line-height: 38px
+		max-width: 830px	
+		margin: 0	auto 35px
+.testimony-img
+	padding-top: 80px
+	position: relative	
+	text-align: center
+	margin-bottom: 40px
+	&:before 
+			content: ''
+			position: absolute
+			top: 0	
+			left: 50%	
+			transform: translateX(-50%)	
+			display: block	
+			width: 27px
+			height: 22px	
+			background: 	 url('../images/general/twitter.png')
+
+.testimony-author
+	font-weight: 700
+
+
+// footer
+
+.main-footer
+	background: $textcolor
+	color: #999999
+	padding: 70px	0 40px
+
+.logo.footer-logo
+	color: #eee
+	margin-bottom: 30px
+	font-size: 22px		
+
+.footer-form__wrapper
+	max-width: 430px
+	margin-right: 130px		
+
+.footer-top
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between	
+	position: relative
+	padding-bottom: 10px		
+	&:after 
+		content: ''
+		display: block
+		position: absolute	
+		bottom: 0	
+		left: 0		
+		width: 100%	
+		height: 1px	
+		background: #999
+
+.footer-text
+	font-size: 14px	
+	margin-bottom: 30px	
+
+.input
+	border: none	
+	border-bottom: 1px solid #999
+	outline: none
+	color: #999	
+	font-size: 14px	
+	background: transparent
+	text-transform: uppercase	
+	text-indent: 5px	
+	&:focus
+		border-bottom: 1px solid #fff
+		color: white
+
+.footer-line
+	display: flex
+	justify-content: space-between	
+	margin-bottom: 15px	
+
+.small-input
+	width: 200px	
+
+.large-input 
+	width: 100%	
+
+.message-input
+	margin-bottom: 80px	
+
+.footer-submit__wrapper
+	position: relative
+	display: inline-block		
+	&:after
+ 	  content: ''
+    position: absolute
+    right: 0
+    top: 7px
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 5px 0 5px 6px
+    border-color: transparent transparent transparent #999
+
+.footer-form__submit
+	background: transparent
+	display: block	
+	position: relative	
+	outline: none
+	border: none	
+	color: #999999
+	padding-right: 20px	 
+	
+.footer-menu__title
+	font-size: 15px	
+	font-weight: 600	
+	text-transform: uppercase	
+	margin-bottom: 35px
+	display: block
+	color: #ddd			
+
+.footer-menu
+	margin-right: 120px
+
+.footer-menu__list
+	list-style-type: none
+	font-size: 14px	
+	padding-left: 0	
+	.footer-menu__link
+		color: #999	
+		display: block
+		transition: .3s ease
+		&:hover
+			color: #fff		
+			text-decoration: none	
+
+.footer-menu__item
+	margin-bottom: 5px	
+
+.footer-bottom
+	padding-top: 30px
+	display: flex
+	flex-wrap: wrap
+	align-items: center	
+	justify-content: space-between	
+	.footer-text
+		margin-bottom: 10px	
+
+.footer-nav__list
+	padding-left: 0	
+	list-style-type: none	
+	display: flex
+	justify-content: space-between	
+	text-transform: uppercase	
+
+.footer-nav__item
+	margin-right: 25px	
+	&:last-child
+		margin-right: 0	
+.footer-nav__link
+	color: #999
+	font-size: 13px	
+	transition: .3s all
+	&:hover
+		color: #fff	
+		text-decoration: none		
+
+@import 'media.sass'
+
+
+
+
+
+
+
+
+
+
+

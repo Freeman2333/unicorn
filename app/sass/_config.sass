@@ -1,0 +1,70 @@
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+
+// USER VARIABLES SECTION
+
+$accent: #e64a19 // Accent Color
+$gray: #efefef // Accent Color
+$fontsize: 16px // Body Font Size
+$textcolor: #212121 // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$source: Source, sans-serif // Roboto Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		font-display: swap
+		src: local($fname), url($furl) format('woff2')
+
+
+@include font('Source', normal, 400, '../fonts/SourceSansProRegular.woff')
+@include font('Source', normal, 700, '../fonts/SourceSansProBold.woff')
+@include font('Source', normal, 300, '../fonts/SourceSansProLight.woff')
+@include font('Source', normal, 600, '../fonts/SourceSansPro-SemiBold.woff')
+
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $source
+	font-size: $fontsize
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	color: $textcolor
+
+.container
+	width: 96%
+	max-width: 1170px
+	margin: 0 auto
